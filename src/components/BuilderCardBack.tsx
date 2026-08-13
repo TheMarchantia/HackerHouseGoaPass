@@ -77,12 +77,15 @@ export const BuilderCardBack: React.FC<BuilderCardBackProps> = ({
         </div>
       </div>
 
-      {/* --- CENTER TYPOGRAPHY & IDENTITY BLOCK --- */}
-      <div className="relative z-10 my-auto text-center space-y-6 max-w-2xl mx-auto px-6 py-6">
+      {/* --- CENTER TYPOGRAPHY & IDENTITY BLOCK (enlarged / zoomed in) --- */}
+      <div className="relative z-10 my-auto text-center space-y-7 max-w-3xl mx-auto px-4 py-2">
         {/* Exact Stacked Logo Style — rendered as SVG text (matches BuilderCardFront technique)
             rather than CSS -webkit-text-stroke, which the PNG export engine doesn't support and
-            was silently dropping, making downloads look different from the live preview. */}
-        <div className="relative select-none my-2 mx-auto w-full max-w-[720px]">
+            was silently dropping, making downloads look different from the live preview.
+            NOTE: because this is viewBox-scaled SVG, simply widening the container (below)
+            scales every glyph, stroke, and the Devanagari wordmark together — no per-element
+            font-size changes needed to "zoom in" the logo. */}
+        <div className="relative select-none mx-auto w-full max-w-[900px]">
           <svg viewBox="0 0 900 260" className="w-full h-auto" xmlns="http://www.w3.org/2000/svg">
             <text
               x="450"
@@ -134,39 +137,39 @@ export const BuilderCardBack: React.FC<BuilderCardBackProps> = ({
         </div>
 
         {/* Framework & Selection Section */}
-        <div className="space-y-2 pt-2">
-          <span className="inline-block bg-[#FF007A] text-white font-mono text-xs font-extrabold px-4 py-1 rounded-full uppercase tracking-wider shadow-md">
+        <div className="space-y-2.5 pt-1">
+          <span className="inline-block bg-[#FF007A] text-white font-mono text-sm font-extrabold px-5 py-1.5 rounded-full uppercase tracking-wider shadow-md">
             SELECTION FRAMEWORK & TIMELINE
           </span>
-          <h3 className="font-sans text-3xl font-extrabold text-white tracking-wide mt-1">
+          <h3 className="font-sans text-4xl font-extrabold text-white tracking-wide mt-2">
             The Road to <span className="text-[#FFDD00]">247</span>
           </h3>
-          <p className="font-sans text-xs text-[#FFFDF5]/80 max-w-md mx-auto leading-relaxed">
+          <p className="font-sans text-sm text-[#FFFDF5]/80 max-w-lg mx-auto leading-relaxed">
             How builders earn a seat at Hacker House Goa 2026. The trials, the criteria, and the journey to the beach.
           </p>
         </div>
 
         {/* Divider Bar */}
-        <div className="w-24 h-1 bg-[#FFDD00] mx-auto rounded-full" />
+        <div className="w-32 h-1.5 bg-[#FFDD00] mx-auto rounded-full" />
 
         {/* Builder Data Block */}
-        <div className="space-y-2">
-          <h2 className="font-condensed text-5xl font-extrabold text-white uppercase tracking-wide">
+        <div className="space-y-2.5">
+          <h2 className="font-condensed text-7xl font-extrabold text-white uppercase tracking-wide">
             {name}
           </h2>
-          <p className="font-mono text-xl font-extrabold text-[#FF007A] uppercase tracking-wider">
+          <p className="font-mono text-2xl font-extrabold text-[#FF007A] uppercase tracking-wider">
             {role}
           </p>
-          <p className="font-condensed text-3xl font-extrabold text-[#FFDD00] uppercase tracking-wider text-shadow-sm">
+          <p className="font-condensed text-4xl font-extrabold text-[#FFDD00] uppercase tracking-wider text-shadow-sm">
             {title}
           </p>
           {team && (
-            <p className="font-mono text-2xl sm:text-3xl font-extrabold text-[#FFE0B2] uppercase tracking-wider text-shadow-sm">
+            <p className="font-mono text-3xl sm:text-4xl font-extrabold text-[#FFE0B2] uppercase tracking-wider text-shadow-sm">
               TEAM: {team}
             </p>
           )}
           {xHandle && (
-            <p className="font-mono text-xs font-bold text-[#FFFDF5]/80">
+            <p className="font-mono text-sm font-bold text-[#FFFDF5]/80">
               {xHandle}
             </p>
           )}
